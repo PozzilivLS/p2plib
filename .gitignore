@@ -1,0 +1,9 @@
+*.sln
+x64/
+.vs/
+.vscode/
+out/
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+CMakeSettings.json
