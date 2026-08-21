@@ -44,7 +44,7 @@ if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET p2plib PROPERTY CXX_STANDARD 20)
 endif()
 
-target_include_directories(p2plib PRIVATE "${PACKETS_ROOT}" REQUIRED)
+target_include_directories(p2plib PUBLIC "${PACKETS_ROOT}" REQUIRED)
 
 target_link_libraries(p2plib PRIVATE
   packetslib
