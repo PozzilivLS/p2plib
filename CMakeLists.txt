@@ -50,3 +50,5 @@ target_link_libraries(p2plib PRIVATE
   packetslib
   ws2_32
 )
+
+install(FILES src/server/servermaster.h src/client/clientmaster.h DESTINATION include)
