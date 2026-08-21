@@ -5,7 +5,7 @@
 
 class Client : public Network {
  public:
-  void getServerInfo();
+  void getServerInfo(uint32_t serverID);
   bool connectToServer();
 
   void run() override;
@@ -24,6 +24,8 @@ class Client : public Network {
   std::vector<Packet> recvMessages_;
 
   bool connected_ = false;
+
+  bool hasServerInfo_ = false;
 };
 
 #endif

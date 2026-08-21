@@ -7,11 +7,8 @@
 #include "../constants.h"
 #include "../utils.h"
 
-void Client::getServerInfo() {
+void Client::getServerInfo(uint32_t serverID) {
   Address stunServer(stunServerAddress, stunServerPort);
-
-  uint32_t serverID = 0;
-  std::cin >> serverID;
 
   std::cout << serverID << ":" << serverID << std::endl;
   Packet outPacket;
@@ -32,6 +29,8 @@ void Client::getServerInfo() {
   targetInfo_ = Address(targetAddress, targetPort);
 
   std::cout << targetAddress << ":" << targetPort << std::endl;
+
+  hasServerInfo_ = true;
 }
 
 bool Client::connectToServer() {
@@ -70,8 +69,10 @@ bool Client::connectToServer() {
 }
 
 void Client::run() {
+  while (!hasServerInfo_) {
+    Sleep(10);
+  }
   isRunning_ = true;
-  getServerInfo();
 
   std::cout << targetInfo_.getIP() << " " << targetInfo_.getPort() << "\n";
 

@@ -16,6 +16,8 @@ class ClientMaster {
 
   std::vector<Packet> getIncomingMessages();
 
+  void setServerID(uint32_t serverID);
+
  private:
   void managing();
 

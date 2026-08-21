@@ -28,3 +28,7 @@ std::vector<Packet> ClientMaster::getIncomingMessages() {
   std::lock_guard<std::mutex> lock(clientMutex_);
   return client_.getMessages();
 }
+
+void ClientMaster::setServerID(uint32_t serverID) {
+  client_.getServerInfo(serverID);
+}
