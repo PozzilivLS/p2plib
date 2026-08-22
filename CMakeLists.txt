@@ -46,9 +46,11 @@ endif()
 
 target_include_directories(p2plib PUBLIC "${PACKETS_ROOT}" REQUIRED)
 
-target_link_libraries(p2plib PRIVATE
+target_link_libraries(p2plib PUBLIC
   packetslib
-  ws2_32
 )
+if (WIN32)
+    target_link_libraries(p2plib PUBLIC ws2_32)
+endif()
 
 install(FILES src/server/servermaster.h src/client/clientmaster.h DESTINATION include)
