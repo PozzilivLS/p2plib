@@ -20,6 +20,8 @@ class Server : public Network {
 
   const std::vector<uint32_t> getClients() const;
 
+  uint32_t getServerID() { return serverID_; }
+
  private:
   void registerServer();
 

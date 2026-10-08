@@ -7,15 +7,7 @@ endif()
 
 project ("p2plib")
 
-include(FetchContent)
-
-FetchContent_Declare(
-  packetslib
-  GIT_REPOSITORY https://github.com/PozzilivLS/NetSocketsLib.git
-  GIT_TAG        master
-)
-
-FetchContent_MakeAvailable(packetslib)
+add_subdirectory(external/packetslib SYSTEM EXCLUDE_FROM_ALL)
 
 #add_executable (p2plib 
 #	"src/main.cpp"

@@ -14,6 +14,8 @@ class ServerMaster {
 
   const std::vector<uint32_t> getAllClients() const;
 
+  uint32_t getServerID() { return server_.getServerID(); }
+
  private:
   void managing();
 
